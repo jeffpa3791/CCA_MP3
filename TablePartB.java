@@ -26,7 +26,7 @@ public class TablePartB{
 
     HTableDescriptor[] tableList = hbase_admin.listTables();  
     for (int i = 0; i < tableList.length; i++){
-        print(tableList[i].getNameAsString());
+        System.out.println(tableList[i].getNameAsString());
     }
    }
 }
