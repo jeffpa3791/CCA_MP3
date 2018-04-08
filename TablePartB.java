@@ -24,8 +24,10 @@ public class TablePartB{
     HBaseConfiguration hconfig = new HBaseConfiguration(new Configuration());
     HBaseAdmin hbase_admin = new HBaseAdmin( hconfig );
 
-    hbase_admin.listTables();  
-    
+    HTableDescriptor[] tableList = hbase_admin.listTables();  
+    for (int i = 0; i < tableList.length; i++){
+        print(tableList[i].getNameAsString());
+    }
    }
 }
 
