@@ -34,7 +34,7 @@ public class TablePartC{
       FileReader fileReader = new FileReader(fileName);
       BufferedReader bufferedReader = new BufferedReader(fileReader);
       while((line = bufferedReader.readLine()) != null) {
-        System.out.println(line);
+        // System.out.println(line); used during testing
         String [] fields = line.split(",");
         
         // create a Put object for the line
