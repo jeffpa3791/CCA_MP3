@@ -26,8 +26,7 @@ public class TablePartC{
    public static void main(String[] args) throws IOException {
      
     HBaseConfiguration hconfig = new HBaseConfiguration(new Configuration());
-    HBaseAdmin hbase_admin = new HBaseAdmin( hconfig );
-    HTable powersTable = new HTable(c, "powers"); 
+    HTable powersTable = new HTable(hconfig, "powers"); 
 
     String fileName = "input.csv";  // assumed to be present in same directory
     String line = null;
@@ -39,12 +38,12 @@ public class TablePartC{
         String [] fields = line.split(",");
         
         // create a Put object for the line
-        Put powersPut = new Put(Bytes.toBytes(fields[1]));  // key
-        powersPut.add(Bytes.toBytes("personal"), Bytes.toBytes("hero"),Bytes.toBytes(fields[2]));
-        powersPut.add(Bytes.toBytes("personal"), Bytes.toBytes("power"),Bytes.toBytes(fields[3]));
-        powersPut.add(Bytes.toBytes("professional"), Bytes.toBytes("name"),Bytes.toBytes(fields[4]));
-        powersPut.add(Bytes.toBytes("professional"), Bytes.toBytes("xp"),Bytes.toBytes(fields[5]));
-        powersPut.add(Bytes.toBytes("custom"), Bytes.toBytes("color"),Bytes.toBytes(fields[6]));
+        Put powersPut = new Put(Bytes.toBytes(fields[0]));  // key
+        powersPut.add(Bytes.toBytes("personal"), Bytes.toBytes("hero"),Bytes.toBytes(fields[1]));
+        powersPut.add(Bytes.toBytes("personal"), Bytes.toBytes("power"),Bytes.toBytes(fields[2]));
+        powersPut.add(Bytes.toBytes("professional"), Bytes.toBytes("name"),Bytes.toBytes(fields[3]));
+        powersPut.add(Bytes.toBytes("professional"), Bytes.toBytes("xp"),Bytes.toBytes(fields[4]));
+        powersPut.add(Bytes.toBytes("custom"), Bytes.toBytes("color"),Bytes.toBytes(fields[5]));
         
         // put the data out to the table
         powersTable.put(powersPut);
