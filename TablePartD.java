@@ -45,11 +45,9 @@ public class TablePartD{
     String row19Hero = Bytes.toString(row19Result.getValue(Bytes.toBytes("personal"),Bytes.toBytes("hero")));
     String row19Color = Bytes.toString(row19Result.getValue(Bytes.toBytes("custom"),Bytes.toBytes("color")));
 
-    System.out.println("hero:" + row1Hero);
-    
+    System.out.println("hero: " + row1Hero + ", power: " + row1Power + ", name: " + row1Name + ", xp: " + row1XP + ", color: " + row1Color);
     System.out.println("hero: " + row19Hero + ", color: " + row19Color);
-    
-    
+    System.out.println("hero: " + row1Hero + ", name: " + row1Name + ", color: " + row1Color);
     
     
    }
