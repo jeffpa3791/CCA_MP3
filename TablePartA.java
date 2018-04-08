@@ -20,23 +20,19 @@ import org.apache.hadoop.hbase.util.Bytes;
 public class TablePartA{
   public static void main(String[] args) throws IOException
   {
+    HBaseConfiguration hconfig = new HBaseConfiguration(new Configuration());
+    HBaseAdmin hbase_admin = new HBaseAdmin( hconfig );
+
     HTableDescriptor tPowers = new HTableDescriptor("powers"); 
     tPowers.addFamily( new HColumnDescriptor("personal"));
     tPowers.addFamily( new HColumnDescriptor("professional"));
     tPowers.addFamily( new HColumnDescriptor("custom"));
+    hbase_admin.createTable( tPowers );
 
     HTableDescriptor tFood = new HTableDescriptor("food"); 
     tFood.addFamily( new HColumnDescriptor("nutrition"));
     tFood.addFamily( new HColumnDescriptor("taste"));
-
-    HBaseConfiguration hconfig = new HBaseConfiguration(new Configuration());
-    HBaseAdmin hbase_admin = new HBaseAdmin( hconfig );
-
-    hbase_admin.createTable( tPowers );
-    System.out.println(“Created powers”);
-
     hbase_admin.createTable( tFood );
-    System.out.println(“Created food”);
   }
 }	
 
