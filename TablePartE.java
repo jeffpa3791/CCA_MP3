@@ -26,7 +26,7 @@ public class TablePartE{
     
     Scan scan = new Scan();
     // just get all data, no need to populate scanner
-    ResultScanner scanner = table.getScanner(scan);
+    ResultScanner scanner = powersTable.getScanner(scan);
     for (Result r: scanner) {
       System.out.println(r);  
     }
