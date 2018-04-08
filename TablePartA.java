@@ -25,7 +25,7 @@ public class TablePartA{
 
     // make the code rerunnable: if table exists, drop it
     if (hbase_admin.tableExists("powers")) {
-       hbase_admin.dropTable( "powers" );
+       hbase_admin.deleteTable( "powers" );
     }
     
     HTableDescriptor tPowers = new HTableDescriptor("powers"); 
@@ -36,7 +36,7 @@ public class TablePartA{
 
     // make the code rerunnable: if table exists, drop it
     if (hbase_admin.tableExists("food")) {
-       hbase_admin.dropTable( "food" );
+       hbase_admin.deleteTable( "food" );
     }
     
     HTableDescriptor tFood = new HTableDescriptor("food"); 
