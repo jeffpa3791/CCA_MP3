@@ -36,7 +36,7 @@ public class TablePartC{
       BufferedReader bufferedReader = new BufferedReader(fileReader);
       while((line = bufferedReader.readLine()) != null) {
         System.out.println(line);
-        fields = line.split(",")
+        String [] fields = line.split(",");
         
         // create a Put object for the line
         Put powersPut = new Put(Bytes.toBytes(fields[1]));  // key
