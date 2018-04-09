@@ -1,0 +1,3 @@
+hero: yes, power: fly, name: batman, xp: 100, color: black
+hero: no, color: green
+hero: yes, name: batman, color: black
